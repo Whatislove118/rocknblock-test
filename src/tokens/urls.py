@@ -1,4 +1,5 @@
 from django.urls import path
+
 from tokens.views import TokenViewSet
 
 urlpatterns = [

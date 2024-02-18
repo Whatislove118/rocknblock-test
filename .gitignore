@@ -169,8 +169,8 @@ build
 .DS_Store
 
 
-drf-lime-city/static
+src/static
 
-drf-lime-city/static/
+src/static/
 
 pytest-report.html
