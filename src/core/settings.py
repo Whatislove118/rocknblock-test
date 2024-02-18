@@ -143,7 +143,11 @@ DEFAULT_AUTO_FIELD = "django.db.models.BigAutoField"
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/5.0/howto/static-files/
 
-STATIC_URL = "static/"
+STATIC_URL = "storage/static/"
+MEDIA_URL = "storage/media/"
+
+STATIC_ROOT = BASE_DIR / "static"
+MEDIA_ROOT = STATIC_ROOT / "media"
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.0/ref/settings/#default-auto-field
