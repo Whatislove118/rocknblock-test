@@ -30,13 +30,13 @@ urlpatterns = [
 
 if settings.DEBUG:
     urlpatterns += [
-        path("api/schema/", SpectacularAPIView.as_view(), name="schema"),
-        path(
+        path("api/schema/", SpectacularAPIView.as_view(), name="schema"),  # type: ignore
+        path(  # type: ignore
             "docs/",
             SpectacularSwaggerView.as_view(url_name="schema"),
             name="swagger-ui",
         ),
-        path(
+        path(  # type: ignore
             "api/schema/redoc/",
             SpectacularRedocView.as_view(url_name="schema"),
             name="redoc",

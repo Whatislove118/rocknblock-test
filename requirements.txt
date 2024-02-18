@@ -45,6 +45,7 @@ hexbytes==0.3.1
 identify==2.5.34
 idna==3.6
 inflection==0.5.1
+iniconfig==2.0.0
 ipython==8.21.0
 jedi==0.19.1
 jsonschema==4.21.1
@@ -76,6 +77,8 @@ pycryptodome==3.20.0
 pyflakes==3.2.0
 pygments==2.17.2
 pyproject-api==1.6.1
+pytest==8.0.1
+pytest-django==4.8.0
 pytz==2024.1
 pyunormalize==15.1.0
 PyYAML==6.0.1

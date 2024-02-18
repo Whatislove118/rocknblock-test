@@ -1,4 +1,3 @@
-from django.db.transaction import atomic
 from drf_spectacular.utils import extend_schema, extend_schema_view, inline_serializer
 from rest_framework import serializers as drf_serializer
 from rest_framework.decorators import action
@@ -37,16 +36,16 @@ class TokenViewSet(GenericViewSet, CreateModelMixin, ListModelMixin):
         serializer = self.get_serializer(data=request.data)
         serializer.is_valid(raise_exception=True)
 
-        self.perform_create(serializer)
+        self.perform_create(serializer)  # type: ignore
         headers = self.get_success_headers(serializer.data)
 
         serializer = TokenDetailSerializer(instance=serializer.instance)
         return Response(serializer.data, status=201, headers=headers)
 
-    @atomic
-    def perform_create(self, serializer: TokenCreateSerializer) -> None:
-        super().perform_create(serializer)
-        obj: TokenModel = serializer.instance
+    def perform_create(self, serializer) -> None:
+        serializer.save()
+        obj: TokenModel = serializer.instance  # type: ignore
+
         manager = ContractManager()
         tx_hash = manager.send_token(
             owner=obj.owner,

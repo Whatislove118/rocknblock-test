@@ -13,7 +13,7 @@ class ContractManager:
         w3: Web3 = w3,
     ) -> None:
         self.w3 = w3
-        self.contract = w3.eth.contract(address=address, abi=abi)
+        self.contract = w3.eth.contract(address=address, abi=abi)  # type: ignore
         self.wallet_private_key = wallet_private_key
 
     def get_total_supply(self) -> int:
@@ -22,7 +22,7 @@ class ContractManager:
 
     def send_token(self, owner: str, unique_hash: str, media_url: str) -> str:
         """Создает транзакцию по токены и возвращает хэш транзакции."""
-        nonce = w3.eth.get_transaction_count(owner)
+        nonce = w3.eth.get_transaction_count(owner)  # type: ignore
         tx = self.contract.functions.mint(
             owner,
             unique_hash,

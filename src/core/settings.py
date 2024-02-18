@@ -168,7 +168,7 @@ CORS_ORIGIN_ALLOW_ALL = True
 
 
 # W3
-CONTRACT_ADDRESS = os.environ.get("CONTRACT_ADDRESS")
-CONTRACT_ABI = os.environ.get("CONTRACT_ABI")
-WEB3_PROVIDER_URI = os.environ.get("WEB3_PROVIDER_URI")
-WALLET_PRIVATE_KEY = os.environ.get("WALLET_PRIVATE_KEY")
+CONTRACT_ADDRESS: str = os.environ.get("CONTRACT_ADDRESS")  # type: ignore
+CONTRACT_ABI: str = os.environ.get("CONTRACT_ABI")  # type: ignore
+WEB3_PROVIDER_URI: str = os.environ.get("WEB3_PROVIDER_URI")  # type: ignore
+WALLET_PRIVATE_KEY: str = os.environ.get("WALLET_PRIVATE_KEY")  # type: ignore
